@@ -195,6 +195,12 @@ Vim script for text filtering and alignment
 
 ==== 使用说明 ====
 
+{{../image/vim_plugin_001.png"}}
+{{../image/vim_plugin_002.png"}}
+{{../image/vim_plugin_003.png"}}
+{{../image/vim_plugin_004.png"}}
+{{../image/vim_plugin_005.png"}}
+
 ==== 帮助文件 ====
 
 [[http://vimcasts.org/episodes/aligning-text-with-tabular-vim/|online help]]
@@ -215,3 +221,5 @@ C/C++ omni-completion with ctags database
 
 ==== github 源 ====
 https://github.com/vim-scripts/OmniCppComplete
+
+====== Last edited: 2013/03/28 11时58分35秒 ======

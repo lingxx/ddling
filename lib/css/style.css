@@ -16,3 +16,10 @@ blockquote {
 	margin: 10px 0px;
 	font-size: 15px;
 }
+
+h6 {
+	font-size: 14px;
+	word-spacing: 0.5em;
+	text-align: right;
+	color: rgb(200, 200, 200);
+}
