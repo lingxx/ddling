@@ -62,8 +62,30 @@
         margin: 20px 0;
       }
 
+      .backToTop {
+        display: none;
+        width: 18px;
+        line-height: 1.2;
+        padding: 5px 0;
+        background-color: #FF6A6A;
+        color: #FFF0F5;
+        font-size: 12px;
+        text-align: center;
+        position: fixed;
+        _position: absolute;
+        right: 10px;
+        bottom: 100px;
+        _bottom: "auto";
+        cursor: pointer;
+        opacity: .6;
+        filter: Alpha(opacity=60);
+      }
+
     </style>
         <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" href="../lib/css/style.css" />
+        <link rel="stylesheet" href="../lib/syntax/styles/shCore.css" />
+        <link rel="stylesheet" href="../lib/syntax/styles/shThemeDefault.css" />
 
     </head>
 
@@ -102,10 +124,18 @@ About me
             </div>
         </div>
 
+        <!-- UY BEGIN -->
+        <div class="container">
+          <div id="uyan_frame"></div>
+          <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1760270" async=""></script>
+        </div>
+        <!-- UY END -->
+
         <div id="footer">
             <div class="container">
                 <p class="muted credit">Copyright by
-                    <a href="http://lingdd.x05.11156.net/wordpress/">ddling</a> 
+                    <a href="http://lingdd.x05.11156.net/wordpress/">ddling</a>
+                    ,developed by <a href="http://code.google.com/p/vimwiki/">vimwiki</a> and <a href="#">vim</a>. 
                 </p>
             </div>
         </div>
@@ -115,6 +145,42 @@ About me
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../lib/syntax/scripts/shCore.js"></script>
+    <script src="../lib/syntax/scripts/shBrushJava.js"></script>
+    <script src="../lib/syntax/scripts/shBrushCpp.js"></script>
+    <script src="../lib/syntax/scripts/shBrushPython.js"></script>
+    <script src="../lib/syntax/scripts/shBrushCss.js"></script>
+    <script src="../lib/syntax/scripts/shBrushJScript.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+          
+          $("pre").addClass("brush: cpp");
+          
+          (function() {
+            var $backToTopTxt = "返回顶部", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+            .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+          }), $backToTopFun = function() {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+              $backToTopEle.css("top", st + winh - 166);    
+          }
+          };
+            $(window).bind("scroll", $backToTopFun);
+            $(function() { $backToTopFun(); });
+        })();
+        });
+
+    </script>
+
+    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
 
 </body>
 </html>
