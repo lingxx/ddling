@@ -1,0 +1,7 @@
+== 常用链接 ==
+
+=== Linux ===
+
+==== vim 相关 ====
+
+* [[https://github.com/tpope/vim-pathogen| Vim_Plugin_pathogen]]

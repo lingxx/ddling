@@ -1,0 +1,40 @@
+学习历程
+
+%toc
+
+=== Linux 学习 ===
+
+==== Vim ====
+
+===== Vim 插件 =====
+
+[[vim_plugin|常见的vim插件安装及基本设置]]
+
+===== Vim 快捷键 =====
+
+=== ios 学习   ===
+
+=== 数据结构   ===
+
+=== C++ ===
+
+=== python ===
+
+=== java ===
+
+{{{
+
+#include <stdio.h>
+
+// This is a commmet
+int main()
+{
+    return 0;
+}
+
+}}}
+
+    mkdir .vim
+
+<code> nimei </code>
+
