@@ -1,4 +1,217 @@
 每次捣鼓电脑都会把电脑里面的配置丢得一塌糊涂，故将我用的vim插件及其github地址保存下来，以免丢失。
 
-=== pathogen ===
+%toc
 
+=== Pathogen ===
+
+Manage your <code>runtimepath</code>
+
+==== 安装 ====
+
+{{{
+
+    mkdir -p ~/.vim/autoload ~/.vim/bundle
+    curl -Sso ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+}}}
+
+==== 简单设置 ====
+
+Add this to your .vimrc:
+
+{{{
+    execute pathogen#infect()
+}}}
+
+==== github 源 ====
+
+https://github.com/tpope/vim-pathogen
+
+=== Taglist ===
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone https://github.com/vim-scripts/taglist.vim.git
+
+}}}
+
+==== 简单设置 ====
+
+{{{
+    let Tlist_Ctags_Cmd='/usr/bin/ctags'
+    let Tlist_Show_One_File=1
+    let Tlist_OnlyWindow=1
+    let Tlist_Use_Right_Window=0
+    let Tlist_Sort_Type='name'
+    let Tlist_Exit_OnlyWindow=1
+    let Tlist_Show_Menu=1
+    let Tlist_Max_Submenu_Items=10
+    let Tlist_Max_Tag_length=20
+    let Tlist_Use_SingleClick=0
+    let Tlist_Auto_Open=0
+    let Tlist_Close_On_Select=0
+    let Tlist_File_Fold_Auto_Close=1
+    let Tlist_GainFocus_On_ToggleOpen=0
+    let Tlist_Process_File_Always=1
+    let Tlist_WinHeight=10
+    let Tlist_WinWidth=18
+    let Tlist_Use_Horiz_Window=0
+}}}
+
+==== github 源 ====
+
+https://github.com/vim-scripts/taglist.vim
+
+=== NERDTree ===
+
+The NERD tree allows you to explore your filesystem and to open files and directories. 
+
+==== 安装 ====
+
+{{{ 
+    cd ~/.vim/bundle
+    git clone https://github.com/scrooloose/nerdtree.git
+}}}
+
+==== github 源 ====
+
+https://github.com/scrooloose/nerdtree
+
+=== Zencoding-vim ===
+
+zencoding-vim is vim script support for expanding abbreviation like zen-coding(emmet).
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone http://github.com/mattn/zencoding-vim.git
+}}}
+
+==== 使用说明 ====
+
+Type ("_" is the cursor position):
+
+{{{
+    html:5_
+}}}
+
+Then type "," (Ctrl + y + ','), you should see:
+
+{{{
+    <!DOCTYPE HTML>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                _
+
+        </body>
+    </html>
+}}}
+
+==== github 源 ====
+https://github.com/mattn/zencoding-vim
+
+=== SuperTab ===
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone https://github.com/ervandew/supertab.git
+}}}
+
+==== github 源 ====
+https://github.com/ervandew/supertab
+
+=== C.vim ===
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone https://github.com/vim-scripts/c.vim.git
+}}}
+
+==== 帮助文件 ====
+
+[[http://lug.fh-swf.de/vim/vim-doc/csupport.html|online help]]
+
+[[../pdf/c-hotkeys|key mapping pdf]]
+
+<code>(you should change the .html to .pdf to see the pdf file)</code>
+
+==== github 源 ====
+https://github.com/vim-scripts/c.vim
+
+=== A.vim ===
+
+A few of quick commands to swtich between source files and header files quickly.
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone https://github.com/vim-scripts/a.vim.git
+}}}
+
+==== Key mapping ====
+
+{{{
+    :A switches to the header file corresponding to the current file being edited (or vise versa)
+    :AS splits and switches
+    :AV vertical splits and switches
+    :AT new tab and switches
+    :AN cycles through matches
+    :IH switches to file under cursor
+    :IHS splits and switches
+    :IHV vertical splits and switches
+    :IHT new tab and switches
+    :IHN cycles through matches
+    <Leader>ih switches to file under cursor
+    <Leader>is switches to the alternate file of file under cursor (e.g. on  <foo.h> switches to foo.cpp)
+    <Leader>ihn cycles through matches
+}}}
+
+==== github 源 ====
+https://github.com/vim-scripts/a.vim
+
+=== Tabular ===
+
+Vim script for text filtering and alignment
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone git://github.com/godlygeek/tabular.git
+}}}
+
+==== 使用说明 ====
+
+==== 帮助文件 ====
+
+[[http://vimcasts.org/episodes/aligning-text-with-tabular-vim/|online help]]
+
+==== github 源 ====
+https://github.com/godlygeek/tabular
+
+===  OmniCppComplete ===
+
+C/C++ omni-completion with ctags database
+
+==== 安装 ====
+
+{{{
+    cd ~/.vim/bundle
+    git clone https://github.com/vim-scripts/OmniCppComplete.git
+}}}
+
+==== github 源 ====
+https://github.com/vim-scripts/OmniCppComplete
