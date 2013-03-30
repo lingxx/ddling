@@ -1,0 +1,49 @@
+%toc
+
+<code>Ctrl-d 退出提示符</code>
+
+{{{
+    $ chmod a+x helloWorld.py
+    $ ./helloWorld.py
+}}}
+
+* 输出PATH环境变量
+<code>echo $PATH</code>
+
+* 将选择的目录添加到PATH变量中
+<code>PATH=$PATH:/home/swaroop/mydir</code>
+
+* 使用内建的help功能，按q退出
+<code>help(str)</code>
+
+* 行末的单独一个反斜杠表示字符串在下一行继续，而不是开始一个新的行
+{{{
+    "This is the first sentence.\
+    This is the second sentence." 
+}}}
+等价于"This is the first sentence. This is the second sentence."
+
+* 指示某些不需要如转义符那样的特别处理的字符串，加上前缀r或R指定自然字符串
+<code>r"Newlines are indicated by \n"</code>
+
+* Unicode字符串,加上前缀r或R
+<code>u"This is a Unicode string."</code>
+
+* 字符串是不可改变的
+
+* 一定要用自然字符串来处理正则表达式
+
+* 每个物理行只写一句逻辑行
+
+* 错误的缩进会引发错误
+
+* range返回一个序列的数, range(1, 5) = [1, 2, 3, 4], range(1, 5, 2) = [1, 3]
+
+* 只有在形参末尾的那些参数可以有默认参数值
+
+* sys模块包含了与python解释器和它的环境有关的函数
+
+* 脚本的名称总是sys.argv列表的第一个参数
+
+* from sys import argv, 避免每次使用sys.
+

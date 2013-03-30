@@ -1,7 +1,24 @@
-== 常用链接 ==
+%toc
 
 === Linux ===
 
-==== vim 相关 ====
+==== vim ====
 
 * [[https://github.com/tpope/vim-pathogen| Vim_Plugin_pathogen]]
+* http://code.google.com/p/vimwiki/
+=== lang ===
+
+==== Python ====
+
+* http://www.python.org/
+* http://www.linuxjournal.com/article/3882
+* http://woodpecker.org.cn/abyteofpython_cn/chinese/
+* http://python.cn/
+* http://www.tutorialspoint.com/python/
+* http://swaroopch.com/notes/python/
+* http://www.ibm.com/developerworks/cn/linux/theme/python/
+* http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Python_Style_Rules
+* http://docs.python.org/3/tutorial/
+* http://diveintopython3.org/
+* http://www.python.org/dev/peps/pep-0008/
+* http://woodpecker.org.cn/diveintopython/
