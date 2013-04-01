@@ -47,3 +47,123 @@
 
 * from sys import argv, 避免每次使用sys.
 
+* 模块的__name__
+每个模块都有一个名称，在模块中可以通过语句来找出模块的名称。当一个模块被第一次输入的时候，这个模块的主块将被运行。假如我们只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块，我们该怎么做呢？这可以通过模块的__name__属性完成。
+{{{
+     #!/usr/bin/python
+     # Filename: using_name.py
+     
+     if __name__ == '__main__':
+         print 'This program is being run by itself'
+     else:
+         print 'I am being imported from another module' 
+}}}
+
+输出
+{{{
+    $ python using_name.py
+    This program is being run by itself
+
+    $ python
+    >>> import using_name
+    I am being imported from another module
+    >>> 
+}}}
+
+每个Python模块都有它的__name__，如果它是'__main__'，这说明这个模块被用户单独运行，我们可以进行相应的恰当操作。
+
+* 你可以使用内建的<code>dir</code>函数来列出模块定义的标识符。标识符有函数、类和变量。当你为dir()提供一个模块名的时候，它返回模块定义的名称列表。如果不提供参数，它返回当前模块中定义的名称列表。
+
+* list是处理一组有序项目的数据结构，即你可以在一个列表中存储一个 序列 的项目。
+
+* 元组和列表十分类似，只不过元组和字符串一样是 不可变的 即你不能修改元组。元组通过圆括号中用逗号分割的项目定义。元组通常用在使语句或用户定义的函数能够安全地采用一组值的时候，即被使用的元组的值不会改变。
+
+* 元组最通常的用法是用在打印语句中，下面是一个例子：
+{{{
+     #!/usr/bin/python
+     # Filename: print_tuple.py
+     
+     age = 22
+     name = 'Swaroop'
+     
+     print '%s is %d years old' % (name, age)
+     print 'Why is %s playing with that python?' % name
+}}}
+
+* 你只能使用不可变的对象（比如字符串）来作为字典的键，但是你可以不可变或可变的对象作为字典的值。基本说来就是，你应该只使用简单的对象作为键。
+{{{
+    # !/usr/bin/python
+    # Filename: using_dict.py
+    
+    # 'ab' is short for 'a'ddress'b'ook
+    
+    ab = {
+               'Swaroop'   : 'swaroopch@byteofpython.info',
+               'Larry'     : 'larry@wall.org',
+               'Matsumoto' : 'matz@ruby-lang.org',
+               'Spammer'   : 'spammer@hotmail.com'
+         }
+    
+    print "Swaroop's address is %s" % ab['Swaroop']
+}}}
+
+* 列表、元组和字符串都是序列.序列的两个主要特点是<code>索引操作符</code>和<code>切片操作符</code>。索引操作符让我们可以从序列中抓取一个特定项目。切片操作符让我们能够获取序列的一个切片，即一部分序列。
+{{{
+     #!/usr/bin/python
+     # Filename: seq.py
+     #
+     shoplist = ['apple', 'mango', 'carrot', 'banana']
+    
+     # Indexing or 'Subscription' operation
+     print 'Item 0 is', shoplist[0]
+     print 'Item 1 is', shoplist[1]
+     print 'Item 2 is', shoplist[2]
+     print 'Item 3 is', shoplist[3]
+     print 'Item -1 is', shoplist[-1]
+     print 'Item -2 is', shoplist[-2]
+     
+     # Slicing on a list
+     print 'Item 1 to 3 is', shoplist[1:3]
+     print 'Item 2 to end is', shoplist[2:]
+     print 'Item 1 to -1 is', shoplist[1:-1]
+     print 'Item start to end is', shoplist[:]
+    
+     # Slicing on a string
+     name = 'swaroop'
+     print 'characters 1 to 3 is', name[1:3]
+     print 'characters 2 to end is', name[2:]
+     print 'characters 1 to -1 is', name[1:-1]
+     print 'characters start to end is', name[:] 
+}}}
+
+Python从0开始计数。索引同样可以是负数，在那样的情况下，位置是从序列尾开始计算的。切片操作符是序列名后跟一个方括号，方括号中有一对可选的数字，并用冒号分割。注意这与你使用的索引操作符十分相似。记住数是可选的，而冒号是必须的。切片操作符中的第一个数（冒号之前）表示切片开始的位置，第二个数（冒号之后）表示切片到哪里结束。
+
+* 记住列表的赋值语句不创建拷贝。你得使用切片操作符来建立序列的拷贝。
+* __init__方法在类的一个对象被建立时，马上运行。这个方法可以用来对你的对象做一些你希望的 初始化 。注意，这个名称的开始和结尾都是双下划线。
+* 类的变量 由一个类的所有对象（实例）共享使用。只有一个类变量的拷贝，所以当某个对象对类的变量做了改动的时候，这个改动会反映到所有其他的实例上。
+
+* 对象的变量 由类的每个对象/实例拥有。因此每个对象有自己对这个域的一份拷贝，即它们不是共享的，在同一个类的不同实例中，虽然对象的变量有相同的名称，但是是互不相关的。通过一个例子会使这个易于理解。
+* Python中所有的类成员（包括数据成员）都是 公共的 ，所有的方法都是 有效的 。只有一个例外：如果你使用的数据成员名称以 双下划线前缀 比如__privatevar，Python的名称管理体系会有效地把它作为私有变量。 这样就有一个惯例，如果某个变量只想在类或对象中使用，就应该以单下划线前缀。而其他的名称都将作为公共的，可以被其他类/对象使用。记住这只是一个惯例，并不是Python所要求的（与双下划线前缀不同）。同样，注意__del__方法与 destructor 的概念类似。
+* 为了使用继承，我们把基本类的名称作为一个元组跟在定义类时的类名称之后。然后，我们注意到基本类的__init__方法专门使用self变量调用，这样我们就可以初始化对象的基本类部分。这一点十分重要——Python不会自动调用基本类的constructor，你得亲自专门调用它。
+* 你可以通过创建一个file类的对象来打开一个文件，分别使用file类的read、readline或write方法来恰当地读写文件。对文件的读写能力依赖于你在打开文件时指定的模式。最后，当你完成对文件的操作的时候，你调用close方法来告诉Python我们完成了对文件的使用。
+* 为了在文件里储存一个对象，首先以写模式打开一个file对象，然后调用储存器模块的dump函数，把对象储存到打开的文件中。这个过程称为 储存 。接下来，我们使用pickle模块的load函数的返回来取回对象。这个过程称为 取储
+* 我们可以使用try..except语句来处理异常。我们把通常的语句放在try-块中，而把我们的错误处理语句放在except-块中。
+
+* 我们把所有可能引发错误的语句放在try块中，然后在except从句/块中处理所有的错误和异常。except从句可以专门处理单一的错误或异常，或者一组包括在圆括号内的错误/异常。如果没有给出错误或异常的名称，它会处理 所有的 错误和异常。对于每个try从句，至少都有一个相关联的except从句。
+* 你可以使用raise语句 引发 异常。你还得指明错误/异常的名称和伴随异常 触发的异常对象。你可以引发的错误或异常应该分别是一个Error或Exception类的直接或间接导出类。
+* 假如你在读一个文件的时候，希望在无论异常发生与否的情况下都关闭文件，该怎么做呢？这可以使用finally块来完成。注意，在一个try块下，你可以同时使用except从句和finally块。如果你要同时使用它们的话，需要把一个嵌入另外一个。
+* sys模块包含系统对应的功能。我们已经学习了sys.argv列表，它包含命令行参数。
+* os模块包含普遍的操作系统功能。如果你希望你的程序能够与平台无关的话，这个模块是尤为重要的。即它允许一个程序在编写后不需要任何改动，也不会发生任何问题，就可以在Linux和Windows下运行。
+    * os.name字符串指示你正在使用的平台。比如对于Windows，它是'nt'，而对于Linux/Unix用户，它是'posix'。
+    * os.getcwd()函数得到当前工作目录，即当前Python脚本工作的目录路径。
+    * os.getenv()和os.putenv()函数分别用来读取和设置环境变量。
+    * os.listdir()返回指定目录下的所有文件和目录名。
+    * os.remove()函数用来删除一个文件。
+    * os.system()函数用来运行shell命令。
+    * os.linesep字符串给出当前平台使用的行终止符。例如，Windows使用'\r\n'，Linux使用'\n'而Mac使用'\r'。
+    * os.path.split()函数返回一个路径的目录名和文件名。
+
+* lambda语句用来创建函数对象。本质上，lambda需要一个参数，后面仅跟单个表达式作为函数体，而表达式的值被这个新建的函数返回。注意，即便是print语句也不能用在lambda形式中，只能使用表达式。
+* assert语句用来声明某个条件是真的。
+* repr函数用来取得对象的规范字符串表示。反引号（也称转换符）可以完成相同的功能。
+* repr函数和反引号用来获取对象的可打印的表示形式。你可以通过定义类的__repr__方法来控制你的对象在被repr函数调用的时候返回的内容。

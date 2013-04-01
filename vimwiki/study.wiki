@@ -20,6 +20,12 @@
 
 === python ===
 
+==== book-review ====
+
+[[AByteOfPython_cn]]
+
+[[diveIntoPython]]
+
 === java ===
 
 {{{

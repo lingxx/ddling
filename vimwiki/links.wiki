@@ -13,7 +13,11 @@
 * http://www.python.org/
 * http://www.linuxjournal.com/article/3882
 * http://woodpecker.org.cn/abyteofpython_cn/chinese/
+* http://code.activestate.com/recipes/langs/python/
+* http://gnosis.cx/publish/tech_index_cp.html
 * http://python.cn/
+* http://www.jython.org/
+* http://www.pythonware.com/daily/
 * http://www.tutorialspoint.com/python/
 * http://swaroopch.com/notes/python/
 * http://www.ibm.com/developerworks/cn/linux/theme/python/
@@ -22,3 +26,7 @@
 * http://diveintopython3.org/
 * http://www.python.org/dev/peps/pep-0008/
 * http://woodpecker.org.cn/diveintopython/
+
+=== design ===
+http://hao.uisdc.com/
+http://xiaba.shijue.me/

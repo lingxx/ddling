@@ -119,85 +119,101 @@
 
         <div id="wrap">
             <div class="container" style="margin-top: 50px;">
-<div class="toc">
-<ul>
-<li><a href="#toc_0.0.1">Linux</a>
-<ul>
-<li><a href="#toc_0.0.1.1">vim</a>
-</ul>
-<li><a href="#toc_0.0.2">lang</a>
-<ul>
-<li><a href="#toc_0.0.2.1">Python</a>
-</ul>
-<li><a href="#toc_0.0.3">design</a>
-</ul>
-</ul>
-</ul>
-</div>
-
-<h3 id="toc_0.0.1">Linux</h3>
-
-<h4 id="toc_0.0.1.1">vim</h4>
-
 <ul>
 <li>
-<a href="https://github.com/tpope/vim-pathogen">Vim_Plugin_pathogen</a>
+可以用doc string（三重引号）来文档化一个python函数
 
 <li>
-<a href="http://code.google.com/p/vimwiki/">http://code.google.com/p/vimwiki/</a>
+python中，万物皆对象
+
+<li>
+只要导入了一个模块，就可以引用它的任何公共的函数，类或属性。模块可以通过这种方法来使用其他模块的功能.当使用在被导入模块中定义的函数时，必须包含模块的名字。
+<pre>
+    &gt;&gt;&gt; import sys
+    &gt;&gt;&gt; sys.path
+    &gt;&gt;&gt; sys
+    &gt;&gt;&gt; sys.path.append('/my/new/path')
+</pre>
 
 </ul>
-<h3 id="toc_0.0.2">lang</h3>
-
-<h4 id="toc_0.0.2.1">Python</h4>
-
-<ul>
-<li>
-<a href="http://www.python.org/">http://www.python.org/</a>
-
-<li>
-<a href="http://www.linuxjournal.com/article/3882">http://www.linuxjournal.com/article/3882</a>
-
-<li>
-<a href="http://woodpecker.org.cn/abyteofpython_cn/chinese/">http://woodpecker.org.cn/abyteofpython_cn/chinese/</a>
-
-<li>
-<a href="http://code.activestate.com/recipes/langs/python/">http://code.activestate.com/recipes/langs/python/</a>
-
-<li>
-<a href="http://python.cn/">http://python.cn/</a>
-
-<li>
-<a href="http://www.tutorialspoint.com/python/">http://www.tutorialspoint.com/python/</a>
-
-<li>
-<a href="http://swaroopch.com/notes/python/">http://swaroopch.com/notes/python/</a>
-
-<li>
-<a href="http://www.ibm.com/developerworks/cn/linux/theme/python/">http://www.ibm.com/developerworks/cn/linux/theme/python/</a>
-
-<li>
-<a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Python_Style_Rules">http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Python_Style_Rules</a>
-
-<li>
-<a href="http://docs.python.org/3/tutorial/">http://docs.python.org/3/tutorial/</a>
-
-<li>
-<a href="http://diveintopython3.org/">http://diveintopython3.org/</a>
-
-<li>
-<a href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a>
-
-<li>
-<a href="http://woodpecker.org.cn/diveintopython/">http://woodpecker.org.cn/diveintopython/</a>
-
-</ul>
-
-<h3 id="toc_0.0.3">design</h3>
 <p>
-<a href="http://hao.uisdc.com/">http://hao.uisdc.com/</a>
-<a href="http://xiaba.shijue.me/">http://xiaba.shijue.me/</a>
+在运行时，通过向sys.path追加路径名，就可以在python的搜索路径中增加新的目录，然后当你导入模块时，python也会在那个目录中进行搜索。
 </p>
+<ul>
+<li>
+Python 函数没有明显的 begin 和 end，没有标明函数的开始和结束的花括号。唯一的分隔符是一个冒号 (:)，接着代码本身是缩进的。代码块是通过它们的缩进来定义的。"代码块”是指：函数、if 语句、for 循环、while 循环，等等。开始缩进表示块的开始，取消缩进表示块的结束。不存在明显的括号，大括号或关键字。这就意味着空白是重要的，并且要一致。
+
+<li>
+Python 使用硬回车来分割语句，冒号和缩进来分割代码块。C++ 和 Java 使用分号来分割语句，花括号来分割代码块。
+
+<li>
+模块是对象，并且所有的模块都有一个内置属性 _<em>name</em>_。一个模块的 _<em>name</em>_ 的值取决于您如何应用模块。如果 import 模块，那么 _<em>name</em>_ 的值通常为模块的文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序一样直接运行模块，在这种情况下 _<em>name</em>_ 的值将是一个特别的缺省值，_<em>main</em>_。
+
+<li>
+当您直接运行模块，_<em>name</em>_ 的值是 _<em>main</em>_ ，所以测试套件执行。当您导入模块，_<em>name</em>_ 的值就是别的东西了，所以测试套件被忽略。
+
+<li>
+Dictionary ....
+
+<li>
+List ....
+
+<li>
+Tuple ....
+
+</ul>
+<p>
+你不能向tuple增加元素，不能从tuple删除元素，不能在tuple中查找元素。只可以使用in来查看一个元素是否存在于tuple中。
+</p>
+<ul>
+<li>
+变量的赋值是一条被分成了多行的命令，用反斜线 (“\”) 作为续行符。
+<pre>
+    &gt;&gt;&gt; myParams = {
+            "server"   : "mpilgrim", \
+            "database" : "master" \
+        }
+</pre>
+
+</ul>
+<p>
+当一条命令用续行符 (“\”) 分割成多行时，后续的行可以以任何方式缩进，此时 Python 通常的严格的缩进规则无需遵守。
+</p>
+<ul>
+<li>
+将一个 tuple 赋值给另一个 tuple，会按顺序将 v 的每个值赋值给每个变量。将一定范围的值赋给多个变量。 
+<pre>
+    &gt;&gt;&gt; v = ('a', 'b', 'e')
+    &gt;&gt;&gt; (x, y, z) = v
+    &gt;&gt;&gt; x
+    'a'
+</pre>
+
+<li>
+但是当定义一个只包含一个元素的 tuple 时逗号是必须的。
+
+<li>
+可以通过对 list 中的每个元素应用一个函数，从而将一个 list 映射为另一个 list。
+<pre>
+    &gt;&gt;&gt; li = [1, 9, 8, 4]
+    &gt;&gt;&gt; li = [elem * 2 for elem in li]
+    &gt;&gt;&gt; li
+    [2, 18, 16, 8]
+</pre>
+
+<li>
+为了将任意包含字符串的 list 连接成单个字符串，可以使用字符串对象的 join 方法。 join 只能用于元素是字符串的 list；它不进行任何的强制类型转换。连接一个存在一个或多个非字符串元素的 list 将引发一个异常。
+
+<li>
+anystring.split(delimiter, 1) 是一个有用的技术，在您想要搜索一个子串，然后分别处理字符前半部分 (即 list 中第一个元素) 和后半部分 (即 list 中第二个元素) 时，使用这个技术。
+
+<li>
+调用函数时唯一必须做的事情就是为每一个必备参数指定值 (以某种方式)；以何种具体的方式和顺序都取决于你。
+
+<li>
+type函数返回任意对象的数据类型。
+
+</ul>
 
                 <div id="push"></div>
             </div>
