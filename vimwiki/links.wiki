@@ -18,6 +18,8 @@
 * http://python.cn/
 * http://www.jython.org/
 * http://www.pythonware.com/daily/
+* http://www.crummy.com/software/BeautifulSoup/bs4/doc/
+* http://code.activestate.com/
 * http://www.tutorialspoint.com/python/
 * http://swaroopch.com/notes/python/
 * http://www.ibm.com/developerworks/cn/linux/theme/python/
@@ -27,6 +29,10 @@
 * http://www.python.org/dev/peps/pep-0008/
 * http://woodpecker.org.cn/diveintopython/
 
+==== Java ====
+
+* http://javacook.darwinsys.com/
+
 === design ===
-http://hao.uisdc.com/
-http://xiaba.shijue.me/
+* http://hao.uisdc.com/
+* http://xiaba.shijue.me/
